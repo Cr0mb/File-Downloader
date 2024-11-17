@@ -118,7 +118,6 @@ if __name__ == "__main__":
     urls = args.urls.split(",")
     filenames = args.filenames.split(",")
     
-    # Ensure the number of URLs matches the number of filenames
     if len(urls) != len(filenames):
         print("The number of URLs must match the number of filenames.")
         exit()
