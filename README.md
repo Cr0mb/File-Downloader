@@ -2,6 +2,18 @@
 
 This script allows you to download files from given URLs with progress tracking, error handling, and retry capabilities. You can also download multiple files in parallel, making it more efficient for large sets of downloads.
 
+---
+
+### Update Log
+
+**2025-06-22**
+
+* Fixed `download_files_parallel` to spawn a download thread for **each URL** instead of limiting to the parallel count.
+* This ensures all files are downloaded concurrently as intended, improving multi-file download reliability.
+
+---
+
+
 ## Features
 
 - **File Downloading**: Downloads files with progress shown using `tqdm` for a better user experience.
