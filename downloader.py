@@ -96,13 +96,14 @@ def download_file_parallel(url, filename, output_dir, retries=3):
 
 def download_files_parallel(urls, filenames, output_dir, retries=3, parallel=2):
     threads = []
-    for i in range(parallel):
+    for i in range(len(urls)):  # FIXED
         thread = threading.Thread(target=download_file_parallel, args=(urls[i], filenames[i], output_dir, retries))
         threads.append(thread)
         thread.start()
-    
+
     for thread in threads:
         thread.join()
+
 
 
 if __name__ == "__main__":
